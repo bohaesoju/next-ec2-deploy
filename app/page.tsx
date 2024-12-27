@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
     <div className="min-h-screen p-8">
@@ -28,7 +26,6 @@ export default function Home() {
             <div className="space-y-2">
               <p>• npm install -g pm2</p>
               <p>• npm run build</p>
-              <p>• pm2 start npm --name "next" -- start</p>
             </div>
           </section>
         </div>
