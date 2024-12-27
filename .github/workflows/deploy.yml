@@ -24,11 +24,11 @@ jobs:
       run: |
         npm install
         npm run build
-        ls -al # 빌드 결과 확인
+        ls -al ./.next
 
     - name: Verify build files
       run: |
-        if [ -z "$(ls -A ./)" ]; then
+        if [ -z "$(ls -A ./.next/)" ]; then
           echo "Error: No files to transfer!"
           exit 1
         fi
@@ -41,12 +41,7 @@ jobs:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
-        source: |
-          .next
-          node_modules
-          public
-          package.json
-          package-lock.json
+        source: './.next/'
         target: '/var/www/next-ec2-deploy'
         strip_components: 0
 
