@@ -23,7 +23,7 @@ jobs:
     - name: Check Secrets
       run: |
         echo "HOST: ${{ secrets.HOST }}"
-        echo "USERNAME: ${{ secrets.USERNAME }}"
+        echo "USERNAME: ubuntu
         echo "Key (trimmed): $(echo ${{ secrets.SSH_PRIVATE_KEY }} | head -c 20)..."    
 
     # 종속성 설치 및 빌드
@@ -46,7 +46,7 @@ jobs:
       uses: appleboy/scp-action@v0.1.1
       with:
         host: ${{ secrets.HOST }}
-        username: ${{ secrets.USERNAME }}
+        username: ubuntu
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         source: './.next/'
         target: '/var/www/next-ec2-deploy'
@@ -57,7 +57,7 @@ jobs:
       uses: appleboy/ssh-action@v0.1.5
       with:
         host: ${{ secrets.HOST }}
-        username: ${{ secrets.USERNAME }}
+        username: ubuntu
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         script: |
           cd /var/www/next-ec2-deploy
