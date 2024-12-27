@@ -18,10 +18,6 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: '18'
-
-    - name: Test SSH Connection
-      run: |
-        ssh -i <(echo "${{ secrets.SSH_PRIVATE_KEY }}") -o StrictHostKeyChecking=no ubuntu@${{ secrets.HOST }} "echo SSH connection successful!"
       
     # 종속성 설치 및 빌드!
     - name: Install dependencies and build
