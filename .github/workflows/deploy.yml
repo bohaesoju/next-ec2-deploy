@@ -9,7 +9,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    # 1. 리포지토리 클론
+    # 1. 리포지토리 클론!
     - name: Checkout code
       uses: actions/checkout@v3
 
