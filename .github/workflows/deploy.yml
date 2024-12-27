@@ -19,13 +19,6 @@ jobs:
       with:
         node-version: '18'
 
-    # Secrets 확인!
-    - name: Check Secrets
-      run: |
-        echo "HOST: ${{ secrets.HOST }}"
-        echo "USERNAME: ubuntu
-        echo "Key (trimmed): $(echo ${{ secrets.SSH_PRIVATE_KEY }} | head -c 20)..."    
-
     # 종속성 설치 및 빌드
     - name: Install dependencies and build
       run: |
