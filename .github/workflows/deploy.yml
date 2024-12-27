@@ -19,7 +19,7 @@ jobs:
       with:
         node-version: '18'
 
-    # Secrets 확인
+    # Secrets 확인!
     - name: Check Secrets
       run: |
         echo "HOST: ${{ secrets.HOST }}"
